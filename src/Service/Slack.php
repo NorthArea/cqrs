@@ -15,7 +15,7 @@ class Slack
             'username' => 'bug'
         ], JSON_THROW_ON_ERROR);
 
-        $ch = curl_init('https://hooks.slack.com/services/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');
+        $ch = curl_init('');
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($ch, CURLOPT_POSTFIELDS, ['payload' => $data]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
