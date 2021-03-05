@@ -1,0 +1,19 @@
+framework:
+    messenger:
+        failure_transport: failed
+        default_bus: command.bus
+
+        buses:
+            command.bus:
+                middleware:
+                    App\Application\Messenger\Middleware\SimpleMiddleware
+            query.bus:
+
+        transports:
+            async: '%env(MESSENGER_TRANSPORT_DSN)%'
+            failed: '%env(MESSENGER_TRANSPORT_DSN)%?queue_name=failed'
+            sync: 'sync://'
+
+        routing:
+            App\Application\Contract\Messenger\Command\CommandInterface: async
+            App\Application\Contract\Messenger\Query\QueryInterface: sync
