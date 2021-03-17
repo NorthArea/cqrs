@@ -1,6 +1,8 @@
 {
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
+    "name": "northarea/cqrs",
+    "description": "CQRS by symfony",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
